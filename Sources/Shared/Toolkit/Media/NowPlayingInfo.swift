@@ -4,6 +4,8 @@
 //  available in the top-level LICENSE file of the project.
 //
 
+#if canImport(UIKit)
+
 import Foundation
 import MediaPlayer
 import UIKit
@@ -125,3 +127,5 @@ public final class NowPlayingInfo {
         MPNowPlayingInfoCenter.default().nowPlayingInfo = info
     }
 }
+
+#endif

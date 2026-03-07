@@ -5,7 +5,12 @@
 //
 
 import Foundation
-import UIKit
+
+#if canImport(UIKit)
+    import UIKit
+#elseif canImport(AppKit)
+    import AppKit
+#endif
 
 /// A `CoverService` which holds a lazily generated cover bitmap in memory.
 public final class GeneratedCoverService: CoverService {

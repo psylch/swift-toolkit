@@ -5,7 +5,12 @@
 //
 
 import Foundation
-import UIKit
+
+#if canImport(UIKit)
+    import UIKit
+#elseif canImport(AppKit)
+    import AppKit
+#endif
 
 /// An HTTP client performs HTTP requests.
 ///

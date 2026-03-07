@@ -4,8 +4,14 @@
 //  available in the top-level LICENSE file of the project.
 //
 
+import CoreGraphics
 import Foundation
-import UIKit
+
+#if canImport(UIKit)
+    import UIKit
+#elseif canImport(AppKit)
+    import AppKit
+#endif
 
 /// Extends Core Graphics's `CGPDFDocument` to conform to `PDFDocument`.
 ///
@@ -309,7 +315,7 @@ public class CGPDFDocumentFactory: PDFDocumentFactory, Loggable {
 
         guard
             let provider = CGDataProvider(sequentialInfo: contextRef, callbacks: &callbacks),
-            let document = UIKit.CGPDFDocument(provider)
+            let document = CoreGraphics.CGPDFDocument(provider)
         else {
             throw PDFDocumentError.openFailed
         }

@@ -4,6 +4,8 @@
 //  available in the top-level LICENSE file of the project.
 //
 
+#if canImport(UIKit)
+
 import func AVFoundation.AVMakeRect
 import Foundation
 import UIKit
@@ -21,3 +23,5 @@ extension UIImage {
         }
     }
 }
+
+#endif

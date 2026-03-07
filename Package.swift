@@ -47,8 +47,8 @@ let package = Package(
                 .process("Resources"),
             ],
             linkerSettings: [
-                .linkedFramework("CoreServices"),
-                .linkedFramework("UIKit"),
+                .linkedFramework("CoreServices", .when(platforms: [.macOS])),
+                .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS, .watchOS, .visionOS])),
             ]
         ),
         .testTarget(

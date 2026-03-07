@@ -15,7 +15,7 @@ extension URL {
     }
 
     init?(percentEncodedString: String) {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, *) {
             self.init(string: percentEncodedString, encodingInvalidCharacters: false)
         } else {
             self.init(string: percentEncodedString)
